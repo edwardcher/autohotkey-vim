@@ -63,7 +63,7 @@ If (WinActive("ahk_class %win_class%")) {
 			Send G
 		return
 	$~g::
-		if ((A_PriorHotkey <> "~g" or A_TimeSincePriorHotkey > 333))
+		if ((A_PriorHotkey <> "$~g" or A_TimeSincePriorHotkey > 333))
     			KeyWait, g
 		else
 			if GetKeyState("Capslock", "T") 
