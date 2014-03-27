@@ -72,3 +72,21 @@ If (WinActive("ahk_class %win_class%")) {
 				send g
 		return
 }	 
+
+
+; Tooltip in top left corner informin when capslock is activated
+CapsLock::SetCapslockState, % ( Toggle( capsLockState ) ? "On" : "Off" )
+
+Toggle(byRef onOff)
+{
+;	onOff := ( onOff == 0 ) ? 1 : 0
+if (onOff == 0) {
+	ToolTip, command mode, A_ScreenWidth, 0
+	onOff = 1
+	}
+else {
+	ToolTip
+	onOff = 0
+	}
+return onOff
+}
