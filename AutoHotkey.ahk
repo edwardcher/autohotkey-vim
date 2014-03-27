@@ -58,7 +58,7 @@ If (WinActive("ahk_class %win_class%")) {
 		return
 	$+g::
 		if GetKeyState("Capslock", "T")
-			Send {End}
+			Send {End}{End}
 		else
 			Send G
 		return
