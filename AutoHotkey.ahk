@@ -8,6 +8,20 @@
 ;
 WinGetClass, win_class, A
 If (WinActive("ahk_class %win_class%")) {
+
+	$0::
+		if GetKeyState("Capslock", "T") 
+			Send {Home}
+		else
+			Send 0
+		return
+	$+$::
+		if GetKeyState("Capslock", "T")
+			Send {End}
+		else
+			Send $
+		return
+
 	
 	$h::
 		if GetKeyState("Capslock", "T") 
