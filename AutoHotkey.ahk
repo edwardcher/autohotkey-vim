@@ -8,6 +8,7 @@
 ;
 WinGetClass, win_class, A
 If (WinActive("ahk_class %win_class%")) {
+	
 	$h::
 		if GetKeyState("Capslock", "T") 
 			Send {Left}
@@ -32,6 +33,32 @@ If (WinActive("ahk_class %win_class%")) {
 		else
 			Send k
 		return
+
+	$+h::
+		if GetKeyState("Capslock", "T") 
+			Send {Shift Down}{Left}
+		else
+			Send H  
+		return
+	$+l::
+		if GetKeyState("Capslock", "T")
+			Send {Shift Down}{Right}
+		else
+			Send L
+		return
+	$+j::
+		if GetKeyState("Capslock", "T") 
+			Send {Shift Down}{Down}
+		else
+			Send J
+		return
+	$+k::
+		if GetKeyState("Capslock", "T")
+			Send {Shift Down}{Up}
+		else
+			Send K
+		return
+
 	$o::
 		if GetKeyState("Capslock", "T") 
 			Send {Enter}
@@ -44,6 +71,7 @@ If (WinActive("ahk_class %win_class%")) {
 		else
 			Send d
 		return
+
 	$^d::
 		if GetKeyState("Capslock", "T") 
 			Send {PgDn}
@@ -56,6 +84,7 @@ If (WinActive("ahk_class %win_class%")) {
 		else
 			Send ^p
 		return
+
 	$+g::
 		if GetKeyState("Capslock", "T")
 			Send {End}{End}
@@ -71,4 +100,5 @@ If (WinActive("ahk_class %win_class%")) {
 			else
 				send g
 		return
+
 }	 
