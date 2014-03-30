@@ -9,6 +9,15 @@
 WinGetClass, win_class, A
 If (WinActive("ahk_class %win_class%")) {
 
+	Sleep, 50
+
+	$u::
+		if GetKeyState("Capslock", "T") 
+			Send {Ctrl Down}z{Ctrl Up}
+		else
+			Send u
+		return
+
 	$0::
 		if GetKeyState("Capslock", "T") 
 			Send {Home}
